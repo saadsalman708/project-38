@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Inter", sans-serif;
+    /* border: 1px solid; */
+}
+
+.dark-bgcolor {
+    background-color: #101827;
+}
+
+input {
+    background-color: #192334;
+}
+
+
+
+
+/* main bg-color:             #101827 */
+/* hero section bg-color:     #161B31 */
+/* hero div 2 bg-color:       #171E2E */
+/* card photo bg:             #232442 */
+/* mariha heading color:      #7A68E5 */
+
+
+
+:root {
+    --whiteText-color: #fff;
+    --whiteText50-color: rgb(173, 173, 173);
+
+    --cardBg-color: #171E2E;
+}
+
+
+
+
+
+
+
+
+/* nav Logo & Buttons */
+
+.logo {
+    width: fit-content;
+    background: #7865E9;
+    background: linear-gradient(90deg, rgba(120, 101, 233, 1) 0%, rgba(59, 214, 219, 1) 100%);
+}
+
+
+a {
+    color: rgb(173, 173, 173);
+    position: relative;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* main Start from here */
+main {
+    color: var(--whiteText-color);
+}
+
+/* hero Start from here */
+.hero {
+    width: 100%;
+    background: #232442;
+    background: linear-gradient(172deg, rgba(35, 36, 66, 1) 0%, rgba(16, 24, 39, 1) 28%);
+}
+
+.hero span {
+    color: #7865E9;
+}
+
+.heroDiv1 button {
+    background: linear-gradient(90deg, rgba(120, 101, 233, 1) 0%, rgba(59, 214, 219, 1) 100%);
+}
+
+
+
+/* hero Card div Starts from here */
+.heroDiv2 {
+    background: #171E2E;
+}
+
+.heroDiv2Logo {
+    background: #3BD6DB;
+    background: linear-gradient(0deg, rgba(59, 214, 219, 1) 0%, rgba(120, 101, 233, 1) 100%);
+}
+
+.heroDiv2ProjectPreview {
+    height: 50dvh;
+    background: #232442;
+}
+
+/* also about Section button styling */
+.heroDiv2 button,
+#aboutSection button {
+    color: var(--whiteText50-color);
+    background-color: #272d3b;
+}
+
+.heroDiv2 button:hover,
+#aboutSection button:hover {
+    color: var(--whiteText-colora);
+    background-color: #36374f;
+    box-shadow: 0 0 20px #36374f;
+}
+
+/* hero Ends here */
+
+
+
+
+
+/* Feature Projects Card Section Starts from here */
+.cardsDiv {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.cardCustom {
+    width: 18rem;
+}
+
+.cardCustomBody {
+    background-color: var(--cardBg-color);
+}
+
+.cardPhoto {
+    aspect-ratio: 16/9;
+    background: #232442;
+}
+
+/* Feature Projects Card Section Ends here */
+
+
+
+
+
+/* Contact Section Starts from here  */
+#contactSectionCard {
+    height: fit-content;
+    background: var(--cardBg-color);
+}
+
+/* Contact Section Ends here  */
+
+/* main Ends here */
+
+
+
+
+/* magic line (The line that goes left to right on UI) */
+.magicLine::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 1000%;
+    height: 2px;
+    transform: translateX(10px);
+    background: #ffffff63;
+}
