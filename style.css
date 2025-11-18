@@ -6,7 +6,7 @@
     box-sizing: border-box;
     user-select: none;
     font-family: "Inter", sans-serif;
-    /* border: 1px solid; */
+      transition: background-color 1s ease, color 1s ease 0.1s;
 }
 
 /* main bg-color:             #101827 */
@@ -18,45 +18,69 @@
 
 
 :root {
-    --whiteText-color: #fff;
-    --whiteText50-color: rgb(173, 173, 173);
+    --mainDark-bgcolor: #101827;
+    
+    --heroSpanName--color: #7865E9;
+    --text-color: #fff;
+    --text50-color: #adadad;
+    
+    --preview-bgcolor: #232442;
+    
+    --cardBody-bgcolor: #171E2E;
+    
+    --logoGrad1--bgcolor: rgba(120, 101, 233, 1);
+    --logoGrad2--bgcolor: rgba(59, 214, 219, 1);
+    
+    --forGradient-bg: rgba(35, 36, 66, 1);
+}
 
-    --cardBg-color: #171E2E;
+body.light-mode {
+    --mainDark-bgcolor: #ffe0ba;
+    
+    --heroSpanName--color: #ff9f2a;
+    --text-color: #000;
+    --text50-color: #4f4f4f;
+    
+    --cardBody-bgcolor: #febe6f;
+    
+    --logoGrad1--bgcolor: #ff8c00;
+    --logoGrad2--bgcolor: #e3ff00;
+
+    --forGradient-bg: #ff9f2a;
 }
 
 
-
-
 .dark-bgcolor {
-    background-color: #101827;
+    background-color: var(--mainDark-bgcolor);
 }
 
 
 .logo {
     width: fit-content;
     background: #7865E9;
-    background: linear-gradient(90deg, rgba(120, 101, 233, 1) 0%, rgba(59, 214, 219, 1) 100%);
+    background: linear-gradient(90deg, var(--logoGrad1--bgcolor) 0%, var(--logoGrad2--bgcolor) 100%);
 }
 
 #toggleTheme {
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: scale 0.3s ease-out, font-size 0.3s ease-out;
+    border: 1px solid var(--text50-color);
+    transition: scale 0.4s ease-out, font-size 0.4s ease-out;
 }
 
 #toggleTheme:hover {
     font-size: large;
-    border-color: #fff;
+    border-color: var(--text-color);
+    border-width: 2px;
     scale: 1.05;
 }
 
 
 a {
-    color: var(--whiteText50-color);
+    color: var(--text50-color);
     position: relative;
 }
 
 a:hover {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -67,8 +91,8 @@ a::after {
     left: 0;
     bottom: 0px;
     width: 100%;
-    height: 2px;
-    background: #fff;
+    height: 2.5px;
+    background: var(--text-color);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s ease;
@@ -116,23 +140,33 @@ nav {
     animation: fadeDown 0.8s ease-in 0.7s forwards;
 }
 
+.navDiv1LogoDivh4 {
+    color: var(--text-color);
+}
+
+.navDiv1LogoDivSpan {
+    color: var(--text50-color);
+}
+
 /* nav Ends here */
 
 
 /* main Start from here */
 main {
-    color: var(--whiteText-color);
+    color: var(--text-color);
 }
 
 /* hero Start from here */
 .hero {
     width: 100%;
-    background: #232442;
-    background: linear-gradient(172deg, rgba(35, 36, 66, 1) 0%, rgba(16, 24, 39, 1) 28%);
+    background: var(--preview-bgcolor);
+    background: linear-gradient(172deg, var(--forGradient-bg) 0%, var(--mainDark-bgcolor) 28%);
 }
 
 .hero span {
-    color: #7865E9;
+    color: var(--heroSpanName--color);
+    opacity: 1;
+    transition: color 0.1s ease;
 }
 
 
@@ -157,6 +191,7 @@ main {
     animation: goUpLittleJump 0.8s ease-in 0.3s forwards;
 }
 .heroDiv1 p {
+    color: var(--text50-color);
     transform: translate(0px , 500px);
     animation: goUpLittleJump 0.8s ease-in 0.6s forwards;
 }
@@ -174,29 +209,29 @@ main {
 /* hero Card div Starts from here */
 .heroDiv2 {
     animation: goUpLittleJump 0.8s ease-in;
-    background: #171E2E;
+    background: var(--cardBody-bgcolor);
 }
 
 .heroDiv2Logo {
     background: #3BD6DB;
-    background: linear-gradient(0deg, rgba(59, 214, 219, 1) 0%, rgba(120, 101, 233, 1) 100%);
+    background: linear-gradient(0deg, var(--logoGrad1--bgcolor) 0%, var(--logoGrad2--bgcolor) 100%);
 }
 
 .heroDiv2ProjectPreview {
     height: 50dvh;
-    background: #232442;
+    background: var(--preview-bgcolor);
 }
 
 /* also about Section button styling */
 .heroDiv2 button,
 #aboutSection button {
-    color: var(--whiteText50-color);
+    color: var(--text50-color);
     background-color: #272d3b;
 }
 
 .heroDiv2 button:hover,
 #aboutSection button:hover {
-    color: var(--whiteText-colora);
+    color: var(--text-color);
     background-color: #36374f;
     box-shadow: 0 0 20px #36374f;
 }
@@ -217,12 +252,13 @@ main {
 }
 
 .cardCustomBody {
-    background-color: var(--cardBg-color);
+    background-color: var(--cardBody-bgcolor);
 }
 
 .cardPhoto {
+    color: var(--text-color);
     aspect-ratio: 16/9;
-    background: #232442;
+    background: var(--preview-bgcolor);
 }
 
 /* Feature Projects Card Section Ends here */
@@ -234,11 +270,11 @@ main {
 /* Contact Section Starts from here  */
 #contactSectionCard {
     height: fit-content;
-    background: var(--cardBg-color);
+    background: var(--cardBody-bgcolor);
 }
 
 input {
-    color: var(--whiteText-color);
+    color: var(--text-color);
     background-color: #192334;
 }
 /* Contact Section Ends here  */
@@ -256,7 +292,8 @@ input {
     width: 1000%;
     height: 2px;
     transform: translateX(10px);
-    background: #ffffff63;
+    /* background: #ffffff63; */
+    background: var(--text50-color);
 }
 
 

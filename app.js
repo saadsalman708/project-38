@@ -12,13 +12,27 @@ function toggleTheme() {
     var toggleBtn = document.getElementById("toggleTheme");
     var text = toggleBtn.textContent;
 
-    if (text == "🌙") {
-        toggleBtn.textContent = "☀️";
-
-    } else {
+    document.body.classList.toggle("light-mode");
+    
+    if (text == "☀️") {
         toggleBtn.textContent = "🌙";
+    } else {
+        toggleBtn.textContent = "☀️";
     }
 }
+
+
+
+
+document.addEventListener('keydown', (event) => {
+        if (event.key === 'd' || event.key === 'D') {
+            toggleTheme();
+        };
+    });
+
+
+
+
 
 function scrollToFeature() {
     document.getElementById("featureProjectSection").scrollIntoView({ behavior: "smooth" });
