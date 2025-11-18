@@ -8,17 +8,17 @@ function submitBtnClicked() {
     });
 };
 
-
-
-
-
 function toggleTheme() {
-    
+    var toggleBtn = document.getElementById("toggleTheme");
+    var text = toggleBtn.textContent;
+
+    if (text == "🌙") {
+        toggleBtn.textContent = "☀️";
+
+    } else {
+        toggleBtn.textContent = "🌙";
+    }
 }
-
-
-
-
 
 function scrollToFeature() {
     document.getElementById("featureProjectSection").scrollIntoView({ behavior: "smooth" });

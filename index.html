@@ -41,13 +41,13 @@
                     </div>
 
                     <ul class="d-flex flex-column flex-md-row flex-lg-row gap-2 gap-md-5 gap-lg-5 m-0 ps-0">
-                        <li class="list-unstyled"><a href="javascript:void(0)">Home</a></li>
-                        <li class="list-unstyled"><a href="javascript:void(0)" onclick="scrollToProject()">Projects</a></li>
-                        <li class="list-unstyled"><a href="javascript:void(0)" onclick="scrollToAbout()">About</a></li>
-                        <li class="list-unstyled"><a href="javascript:void(0)" onclick="scrollToContact()">Contact</a></li>
+                        <li class="list-unstyled navLi1"><a href="javascript:void(0)">Home</a></li>
+                        <li class="list-unstyled navLi2"><a href="javascript:void(0)" onclick="scrollToProject()">Projects</a></li>
+                        <li class="list-unstyled navLi3"><a href="javascript:void(0)" onclick="scrollToAbout()">About</a></li>
+                        <li class="list-unstyled navLi4"><a href="javascript:void(0)" onclick="scrollToContact()">Contact</a></li>
                     </ul>
 
-                    <button class="btn my-3" onclick="toggleTheme()">🌙☀️</button>
+                    <button id="toggleTheme" onclick="toggleTheme()" class="btn my-3">🌙</button>
 
                 </div>
 
@@ -67,7 +67,7 @@
         <div class="hero row d-flex justify-content-between gap-5 gap-md-0 gap-lg-0 pt-5 ps-4 px-md-5 px-lg-5">
 
             <!-- hero heading -->
-            <div class="heroDiv1 col-md-8 col-lg-8 pe-5 my-auto">
+            <div class="heroDiv1 col-md-8 col-lg-8 pe-md-5 pe-lg-5 my-auto">
                 <h2 class="fs-1">Hi, I'm <span>Mahira</span> — I build interfaces with motion & depth.</h2>
                 <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iure sit
                     doloremque sed totam dolores?
@@ -75,7 +75,7 @@
                     dolor
                     vero.</p>
                 <div class="d-flex align-items-center gap-4">
-                    <button onclick="scrollToFeature()" class="btn text-decoration-underline fw-bold border-0 rounded-3">See Projects</button>
+                    <button onclick="scrollToFeature()" class="logo btn text-decoration-underline fw-bold border-0 rounded-3">See Projects</button>
                     <a href="javascrip:void(0)" onclick="scrollToContact()">Get in touch</a>
                 </div>
             </div>
@@ -201,7 +201,7 @@
 
 
         <!-- Contact Section Starts from here -->
-        <form class="overflow-hidden px-4 px-md-5 px-lg-5 mb-4" action="" onsubmit="submitBtnClicked()">
+        <form class="overflow-hidden px-4 px-md-5 px-lg-5 mb-4" onsubmit="return false">
             <h3 class="fw-bold magicLine position-relative mb-4">Contact</h3>
 
             <div class="d-flex justify-content-between row gap-4">
@@ -212,12 +212,12 @@
                     <input class="border-0 rounded-3 p-2 ps-3" type="text" placeholder="Name">
                     <input class="border-0 rounded-3 p-2 ps-3" type="email" placeholder="Email">
                     <input class="border-0 rounded-3 p-2 ps-3" type="text" placeholder="Message">
-                    <button class="btn logo border-0 fw-bold px-3 py-2 mt-2" type="submit">Send</button>
+                    <button onclick="submitBtnClicked()" class="btn logo border-0 fw-bold px-3 py-2 mt-2">Send</button>
                 </div>
                 <!-- input section Ends here -->
 
                 <!-- right side address Card Starts from here -->
-                <div id="contactSectionCard" class="rounded-4 col-md-3 col-lg-3 p-4 pe-md-5 pe-lg-5">
+                <div id="contactSectionCard" class="rounded-4 col-md-3 col-lg-3 p-4 pe-md-auto pe-lg-auto">
                     <h4 class="fw-bold">Get in touch</h4>
                     <span class="fw-bold me-2">Email: </span>
                     <a href="#">mahira@example.com</a>

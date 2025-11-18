@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -9,17 +8,6 @@
     font-family: "Inter", sans-serif;
     /* border: 1px solid; */
 }
-
-.dark-bgcolor {
-    background-color: #101827;
-}
-
-input {
-    background-color: #192334;
-}
-
-
-
 
 /* main bg-color:             #101827 */
 /* hero section bg-color:     #161B31 */
@@ -39,11 +27,10 @@ input {
 
 
 
+.dark-bgcolor {
+    background-color: #101827;
+}
 
-
-
-
-/* nav Logo & Buttons */
 
 .logo {
     width: fit-content;
@@ -51,9 +38,20 @@ input {
     background: linear-gradient(90deg, rgba(120, 101, 233, 1) 0%, rgba(59, 214, 219, 1) 100%);
 }
 
+#toggleTheme {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: scale 0.3s ease-out, font-size 0.3s ease-out;
+}
+
+#toggleTheme:hover {
+    font-size: large;
+    border-color: #fff;
+    scale: 1.05;
+}
+
 
 a {
-    color: rgb(173, 173, 173);
+    color: var(--whiteText50-color);
     position: relative;
 }
 
@@ -62,6 +60,7 @@ a:hover {
     text-decoration: none;
 }
 
+/* <a> animated underline on hover */
 a::after {
     content: "";
     position: absolute;
@@ -80,6 +79,46 @@ a:hover::after {
 }
 
 
+/* nav Starts from here */
+@keyframes fadeDown {
+    0% {
+        transform: translateY(-200px);
+    }
+    70% {
+        transform: translateY(20px);
+    }
+    85% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+nav {
+    animation: fadeDown 0.8s ease-in;
+}
+
+.navLi1, .navLi2, .navLi3, .navLi4 {
+    transform: translateY(-300px);
+}
+
+.navLi1 {
+    animation: fadeDown 0.8s ease-in 0.4s forwards;
+}
+.navLi2 {
+    animation: fadeDown 0.8s ease-in 0.5s forwards;
+}
+.navLi3 {
+    animation: fadeDown 0.8s ease-in 0.6s forwards;
+}
+.navLi4 {
+    animation: fadeDown 0.8s ease-in 0.7s forwards;
+}
+
+/* nav Ends here */
+
+
 /* main Start from here */
 main {
     color: var(--whiteText-color);
@@ -96,14 +135,45 @@ main {
     color: #7865E9;
 }
 
+
+
+@keyframes goUpLittleJump {
+    0% {
+        transform: translate(0px , 500px);
+    }
+    70% {
+        transform: translate(0px , -10px);
+    }
+    85% {
+        transform: translate(0px , 20px);
+    }
+    100% {
+        transform: translate(0px , 0px);
+    }
+}
+
+.heroDiv1 h2 {
+    transform: translate(0px , 500px);
+    animation: goUpLittleJump 0.8s ease-in 0.3s forwards;
+}
+.heroDiv1 p {
+    transform: translate(0px , 500px);
+    animation: goUpLittleJump 0.8s ease-in 0.6s forwards;
+}
 .heroDiv1 button {
-    background: linear-gradient(90deg, rgba(120, 101, 233, 1) 0%, rgba(59, 214, 219, 1) 100%);
+    transform: translate(0px , 500px);
+    animation: goUpLittleJump 0.8s ease-in 0.9s forwards;
+}
+.heroDiv1 a {
+    transform: translate(0px , 500px);
+    animation: goUpLittleJump 0.8s ease-in 1s forwards;
 }
 
 
 
 /* hero Card div Starts from here */
 .heroDiv2 {
+    animation: goUpLittleJump 0.8s ease-in;
     background: #171E2E;
 }
 
@@ -167,6 +237,10 @@ main {
     background: var(--cardBg-color);
 }
 
+input {
+    color: var(--whiteText-color);
+    background-color: #192334;
+}
 /* Contact Section Ends here  */
 
 /* main Ends here */
@@ -183,4 +257,21 @@ main {
     height: 2px;
     transform: translateX(10px);
     background: #ffffff63;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 786px) {
+
+    #toggleTheme:hover {
+        font-size: normal;
+        scale: 1;
+    }
 }
