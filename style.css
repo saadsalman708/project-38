@@ -292,6 +292,11 @@ main {
 
 
 /* Contact Section Starts from here  */
+
+.contactSectionForm {
+    color: var(--text50-color);
+}
+
 #contactSectionCard {
     height: fit-content;
     background: var(--cardBody-bgcolor);
@@ -335,7 +340,6 @@ footer {
     width: 1000%;
     height: 2px;
     transform: translateX(10px);
-    /* background: #ffffff63; */
     background: var(--text50-color);
 }
 
