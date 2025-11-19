@@ -6,16 +6,8 @@
     box-sizing: border-box;
     user-select: none;
     font-family: "Inter", sans-serif;
-      transition: background-color 1s ease, color 1s ease 0.1s;
+    transition: background-color 1s ease, color 1s ease 0.1s;
 }
-
-/* main bg-color:             #101827 */
-/* hero section bg-color:     #161B31 */
-/* hero div 2 bg-color:       #171E2E */
-/* card photo bg:             #232442 */
-/* mariha heading color:      #7A68E5 */
-
-
 
 :root {
     --mainDark-bgcolor: #101827;
@@ -25,6 +17,10 @@
     --text50-color: #adadad;
     
     --preview-bgcolor: #232442;
+
+    --heroDiv2Btn-color: #adadad;
+    --heroDiv2Btn-bgcolor: #272d3b;
+    --heroDiv2BtnHover-bgcolor: #36374f;
     
     --cardBody-bgcolor: #171E2E;
     
@@ -32,6 +28,9 @@
     --logoGrad2--bgcolor: rgba(59, 214, 219, 1);
     
     --forGradient-bg: rgba(35, 36, 66, 1);
+
+    --input-color: #adadad;
+    --input-bgcolor: #192334;
 }
 
 body.light-mode {
@@ -41,12 +40,21 @@ body.light-mode {
     --text-color: #000;
     --text50-color: #4f4f4f;
     
-    --cardBody-bgcolor: #febe6f;
+    --preview-bgcolor: #ff8c00;
+    
+    --heroDiv2Btn-color: #fee2bf;
+    --heroDiv2Btn-bgcolor: #ff9a1f;
+    --heroDiv2BtnHover-bgcolor: #ef8300;
+    
+    --cardBody-bgcolor: #ffbb67;
     
     --logoGrad1--bgcolor: #ff8c00;
     --logoGrad2--bgcolor: #e3ff00;
 
     --forGradient-bg: #ff9f2a;
+
+    --input-color: #ffecdb;
+    --input-bgcolor: #ffac47;
 }
 
 
@@ -218,6 +226,7 @@ main {
 }
 
 .heroDiv2ProjectPreview {
+    color: #fff;
     height: 50dvh;
     background: var(--preview-bgcolor);
 }
@@ -225,15 +234,15 @@ main {
 /* also about Section button styling */
 .heroDiv2 button,
 #aboutSection button {
-    color: var(--text50-color);
-    background-color: #272d3b;
+    color: var(--heroDiv2Btn-color);
+    background-color: var(--heroDiv2Btn-bgcolor);
 }
 
 .heroDiv2 button:hover,
 #aboutSection button:hover {
-    color: var(--text-color);
-    background-color: #36374f;
-    box-shadow: 0 0 20px #36374f;
+    color: #fff;
+    background-color: var(--heroDiv2BtnHover-bgcolor);
+    box-shadow: 0 0 20px var(--heroDiv2BtnHover-bgcolor);
 }
 
 /* hero Ends here */
@@ -252,7 +261,12 @@ main {
 }
 
 .cardCustomBody {
+    color: var(--text-color);
     background-color: var(--cardBody-bgcolor);
+}
+
+.cardCustomBody p {
+    color: var(--text50-color);
 }
 
 .cardPhoto {
@@ -267,6 +281,16 @@ main {
 
 
 
+/* About Section Starts from here */
+#aboutSection p {
+    color: var(--text50-color);
+}
+/* About Section Ends here */
+
+
+
+
+
 /* Contact Section Starts from here  */
 #contactSectionCard {
     height: fit-content;
@@ -274,12 +298,31 @@ main {
 }
 
 input {
-    color: var(--text-color);
-    background-color: #192334;
+    /* color: var(--text-color); */
+    background-color: var(--input-bgcolor);
+}
+
+input::placeholder {
+    color: var(--input-color);
 }
 /* Contact Section Ends here  */
 
 /* main Ends here */
+
+
+
+hr {
+    color: var(--text50-color);
+}
+
+
+
+/* footer Starts from here */
+footer {
+    color: var(--text50-color);
+}
+/* footer Ends here */
+
 
 
 

@@ -19,13 +19,27 @@ function toggleTheme() {
     } else {
         toggleBtn.textContent = "☀️";
     }
+
+    var elems = document.querySelectorAll("nav * , .hero *");
+
+    for (let i = 0; i < elems.length; i++) {
+
+        elems[i].style.animation = "none";
+
+        setInterval( function(){
+            
+            void elems[i].offsetWidth;
+            elems[i].style.animation = "";
+        }, 80);
+    }
+
 }
 
 
 
 
 document.addEventListener('keydown', (event) => {
-        if (event.key === 'd' || event.key === 'D') {
+        if (event.key === 'd' || event.key === 'D' || event.key === 't' || event.key === 'T') {
             toggleTheme();
         };
     });
